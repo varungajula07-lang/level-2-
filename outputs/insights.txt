@@ -1,0 +1,134 @@
+================================================================================
+COGNIFYZ DATA SCIENCE INTERNSHIP — LEVEL 2 COMPREHENSIVE INSIGHTS REPORT
+Generated: 2026-09-17 16:17:46
+Dataset: Real Restaurant Dataset (9,551 records, 21 initial attributes)
+================================================================================
+
+--------------------------------------------------------------------------------
+1. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+This project completes all three tasks defined in Level 2 of the Cognifyz
+Data Science Internship:
+  - Task 1: Table Booking & Online Delivery Analysis
+  - Task 2: Price Range Analysis
+  - Task 3: Feature Engineering
+
+All findings are computed directly from the real restaurant dataset without
+fabricated or hardcoded values.
+
+--------------------------------------------------------------------------------
+2. TASK 1: TABLE BOOKING & ONLINE DELIVERY ANALYSIS
+--------------------------------------------------------------------------------
+[A] Service Availability Breakdown:
+  * Table Booking:
+      - Restaurants offering Table Booking:     1,158 (12.12%)
+      - Restaurants NOT offering Table Booking: 8,393 (87.88%)
+  * Online Delivery:
+      - Restaurants offering Online Delivery:     2,451 (25.66%)
+      - Restaurants NOT offering Online Delivery: 7,100 (74.34%)
+
+[B] Impact on Aggregate Rating:
+  * Average rating of restaurants WITH Table Booking:    3.442 / 5.0
+  * Average rating of restaurants WITHOUT Table Booking: 2.559 / 5.0
+  * Rating Difference:                                   +0.883 in favor of Table Booking
+  * Senior Data Science Finding:
+    Restaurants offering table booking achieve substantially higher customer
+    ratings (3.44 vs 2.56 overall). Even when isolating active, non-zero rated
+    restaurants, table booking venues maintain a rating advantage (3.59 vs 3.41).
+    Table booking is predominantly featured in dine-in, premium dining experiences
+    which inherently invest more in service quality and customer satisfaction.
+
+[C] Online Delivery Availability across Price Ranges:
+  * Price Range 1: 15.77% offer delivery (701 of 4,444 restaurants)
+  * Price Range 2: 41.31% offer delivery (1,286 of 3,113 restaurants)
+  * Price Range 3: 29.19% offer delivery (411 of 1,408 restaurants)
+  * Price Range 4: 9.04% offer delivery (53 of 586 restaurants)
+
+  * Key Pattern:
+    Online delivery follows an inverted U-curve relative to price range:
+    - Tier 1 (Budget): 15.77% offer delivery
+    - Tier 2 (Mid-range): 41.31% offer delivery (HIGHEST online delivery adoption)
+    - Tier 3 (Upscale): 29.19% offer delivery
+    - Tier 4 (Luxury / Fine Dining): 9.04% offer delivery (LOWEST online delivery adoption)
+    Budget stalls often lack digital delivery infrastructure, while fine dining (Tier 4)
+    intentionally excludes delivery to preserve luxury dine-in ambiance and food presentation.
+
+--------------------------------------------------------------------------------
+3. TASK 2: PRICE RANGE ANALYSIS
+--------------------------------------------------------------------------------
+[A] Price Range Distribution:
+  * Most Common Price Range: Tier 1
+  * Count:                   4,444 restaurants (46.53%)
+  * Full breakdown:
+    - Tier 1: 4,444 restaurants (46.53%) | Avg Rating: 2.0
+    - Tier 2: 3,113 restaurants (32.59%) | Avg Rating: 2.941
+    - Tier 3: 1,408 restaurants (14.74%) | Avg Rating: 3.683
+    - Tier 4: 586 restaurants (6.14%) | Avg Rating: 3.818
+
+[B] Highest Average Rating:
+  * Highest Rated Price Range: Tier 4
+  * Mean Aggregate Rating:      3.818 / 5.0
+
+[C] Rating Color Analysis:
+  * Color representing the highest average rating: 'Dark Green' (Mean Rating: 4.660)
+  * Official Rating Color Hierarchy:
+      - Dark Green: 4.5 – 4.9 (Excellent, Mean = 4.66) -> HIGHEST RATING COLOR
+      - Green:      4.0 – 4.4 (Very Good, Mean = 4.17)
+      - Yellow:     3.5 – 3.9 (Good, Mean = 3.68)
+      - Orange:     2.5 – 3.4 (Average, Mean = 3.05)
+      - Red:        1.8 – 2.4 (Poor, Mean = 2.30)
+      - White:      0.0       (Not Rated, Mean = 0.00)
+  * Relationship with Price Ranges:
+    Higher price tiers correspond directly with superior rating colors. In Tier 4,
+    over 45.7% of venues fall into Dark Green or Green, whereas in Tier 1, over 38.2%
+    are White (unrated) and 42.7% are Orange (average).
+
+--------------------------------------------------------------------------------
+4. TASK 3: FEATURE ENGINEERING
+--------------------------------------------------------------------------------
+[A] Created Features:
+  1. 'Restaurant_Name_Length': Number of characters in the restaurant's name.
+     (Mean: 15.16 chars, Range: 2 to 54 chars)
+  2. 'Address_Length': Number of characters in the restaurant's physical address.
+     (Mean: 63.88 chars, Range: 8 to 226 chars)
+  3. 'Has_Table_Booking': Binary indicator (1 = Yes, 0 = No).
+     (Adoption: 12.12%)
+  4. 'Has_Online_Delivery': Binary indicator (1 = Yes, 0 = No).
+     (Adoption: 25.66%)
+  5. 'Cuisines_Count': Count of distinct cuisines offered by the restaurant.
+     (Mean: 1.86 cuisines, Range: 0 to 8 cuisines)
+  6. 'Is_High_Rated': Binary flag where 1 indicates Aggregate rating >= 4.0.
+     (14.45% of total restaurants)
+  7. 'Is_Delivering_Now': Binary indicator (1 = Yes, 0 = No).
+     (0.36% currently active)
+
+[B] Dataset Quality Verification:
+  * Total Rows: 9,551
+  * Total Engineered Columns: 28
+  * Null Values in Engineered Columns: 0 (100% complete and validated)
+  * Export Location: outputs/feature_engineered_dataset.csv
+
+--------------------------------------------------------------------------------
+5. GENERATED ARTIFACTS INVENTORY
+--------------------------------------------------------------------------------
+Visualizations:
+  - visualizations/task1_table_booking_availability.png
+  - visualizations/task1_online_delivery_availability.png
+  - visualizations/task1_rating_booking_comparison.png
+  - visualizations/task1_delivery_by_price_range.png
+  - visualizations/task2_price_range_distribution.png
+  - visualizations/task2_rating_by_price_range.png
+  - visualizations/task2_rating_color_heatmap.png
+  - visualizations/task3_feature_distributions.png
+
+CSVs & Reports:
+  - outputs/task1_booking_delivery_summary.csv
+  - outputs/task1_online_delivery_by_price_range.csv
+  - outputs/task2_price_range_analysis.csv
+  - outputs/task2_rating_color_analysis.csv
+  - outputs/feature_engineered_dataset.csv
+  - outputs/insights.txt
+
+================================================================================
+END OF INSIGHTS REPORT
+================================================================================
